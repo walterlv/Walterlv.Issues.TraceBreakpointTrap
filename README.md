@@ -22,3 +22,9 @@ If you want to debug this demo using other debuggers (e.g. GDB, LLDB), you can u
 
 Please attach a dotnet debugger and use 'Set next statement'.
 ```
+
+Attach a dotnet debugger and then you'll see the following output:
+
+```powershell
+Trace/breakpoint trap
+```
