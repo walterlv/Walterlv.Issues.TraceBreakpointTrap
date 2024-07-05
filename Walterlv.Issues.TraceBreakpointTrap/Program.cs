@@ -20,6 +20,7 @@ class Program
         var manager = new VolumeManager();
         manager.Init();
 
-        Console.WriteLine("Issue is not reproduced. Exit.");
+        Thread.Sleep(1000);
+        Console.WriteLine("Issue may not be reproduced. Exit.");
     }
 }
