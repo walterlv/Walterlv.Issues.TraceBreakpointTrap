@@ -1,4 +1,5 @@
-﻿using static Walterlv.Issues.TraceBreakpointTrap.Native.Linux;
+﻿using System.Runtime.InteropServices;
+using static Walterlv.Issues.TraceBreakpointTrap.Native.Linux;
 
 namespace Walterlv.Issues.TraceBreakpointTrap;
 
@@ -32,7 +33,7 @@ public class VolumeManager
             return;
         }
 
-        pa_context_set_state_callback(context, _contextStateCallback, 0);
+        pa_context_set_state_callback(context, GetCallbackAddress(), 0);
 
         var result = pa_context_connect(context, 0, 0, 0);
         if (result < 0)
@@ -46,6 +47,9 @@ public class VolumeManager
             return;
         }
     }
+
+    [DllImport("test")]
+    private static unsafe extern nint GetCallbackAddress();
 
     private void ContextStateCallback(IntPtr c, IntPtr userdata)
     {

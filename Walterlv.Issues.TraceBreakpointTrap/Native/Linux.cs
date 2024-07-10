@@ -16,7 +16,7 @@ public static class Linux
     public static extern nint pa_context_new(nint mainloop, [MarshalAs(UnmanagedType.LPUTF8Str)] string name);
 
     [DllImport("libpulse.so.0")]
-    public static extern void pa_context_set_state_callback(nint c, pa_context_notify_cb_t cb, nint userdata);
+    public static extern void pa_context_set_state_callback(nint c, nint cb, nint userdata);
 
     [DllImport("libpulse.so.0")]
     public static extern int pa_context_connect(nint c, nint server, uint flags, nint api);

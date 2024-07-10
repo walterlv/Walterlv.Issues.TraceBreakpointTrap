@@ -17,9 +17,9 @@ class Program
 
         AttachDebugger(args);
 
-        // var manager = new VolumeManager();
-        // manager.Init();
-        Tester.Run();
+        var manager = new VolumeManager();
+        manager.Init();
+        //Tester.Run();
 
         Thread.Sleep(1000);
         Console.WriteLine("Issue may not be reproduced. Exit.");
